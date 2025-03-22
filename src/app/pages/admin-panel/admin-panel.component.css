@@ -1,0 +1,22 @@
+.admin-panel {
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .admin-panel ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .admin-panel li {
+    margin: 10px 0;
+  }
+  
+  .admin-panel a {
+    color: #673ab7;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  

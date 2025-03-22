@@ -1,0 +1,19 @@
+<div class="login-container">
+  <h2>Login</h2>
+
+  <form (submit)="login(); $event.preventDefault()">
+    <label for="username">Usuário:</label>
+    <input type="text" id="username" [(ngModel)]="username" name="username" required>
+
+    <label for="password">Senha:</label>
+    <input type="password" id="password" [(ngModel)]="password" name="password" required>
+
+    <button type="submit">Entrar</button>
+  </form>
+
+  <p *ngIf="erro" class="erro">{{ erro }}</p>
+
+  <hr>
+  <p>Não tem conta? <a routerLink="/cadastro">Criar cadastro</a></p>
+
+</div>

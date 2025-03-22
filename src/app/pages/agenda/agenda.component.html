@@ -1,0 +1,44 @@
+<div class="agenda-container">
+  <h2>Agendar Serviço</h2>
+
+  <form (submit)="agendar(); $event.preventDefault()">
+    <label>Nome da Cliente:</label>
+    <input type="text" [(ngModel)]="nomeCliente" name="cliente" required />
+
+    <label>Data:</label>
+    <input
+      type="date"
+      [(ngModel)]="data"
+      [min]="dataMinima"
+      (change)="atualizarHorariosDisponiveis()"
+      name="data"
+      required
+    />
+
+    <label>Horário:</label>
+    <select [(ngModel)]="horario" name="horario" required>
+      <option *ngFor="let hora of horariosDisponiveis" [value]="hora">
+        {{ hora }}
+      </option>
+    </select>
+
+    <label>Serviço:</label>
+    <select [(ngModel)]="servicoSelecionado" name="servico" required>
+      <option value="" disabled selected>Selecione um serviço</option>
+      <option *ngFor="let servico of servicos" [value]="servico">
+        {{ servico }}
+      </option>
+    </select>
+
+    <button type="submit">Agendar</button>
+  </form>
+
+  <p style="text-align: center; margin-top: 20px" *ngIf="usuarioEhAdmin()">
+    <a routerLink="/servicos-agendados">Ver todos os serviços agendados</a>
+  </p>
+
+  <p style="text-align: center; margin-top: 10px" *ngIf="usuarioEhAdmin()">
+    <a routerLink="/admin">Ir para o Painel do Administrador</a>
+  </p>
+  <app-logout-button></app-logout-button>
+</div>

@@ -1,0 +1,30 @@
+<div class="servicos-agendados-container">
+  <h2>Serviços Agendados</h2>
+
+  <ul *ngIf="agendamentos.length > 0; else nenhum">
+    <li *ngFor="let agendamento of agendamentos">
+      <span>
+        {{ formatarData(agendamento.data) }} - {{ agendamento.horario }} - {{ agendamento.cliente }} - {{ agendamento.servico }}
+
+      </span>
+      
+    
+      <button
+        *ngIf="usuarioEhAdmin() && agendamento.id"
+        (click)="deletar(agendamento.id)"
+      >
+        Excluir
+      </button>
+    </li>
+    
+    
+  </ul>
+
+  <ng-template #nenhum>
+    <p>Nenhum serviço agendado.</p>
+  </ng-template>
+
+  <p style="text-align: center; margin-top: 30px">
+    <a routerLink="/agenda">← Voltar para agendar</a>
+  </p>
+</div>

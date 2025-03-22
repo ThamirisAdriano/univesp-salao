@@ -1,0 +1,24 @@
+<div class="cadastro-container">
+    <h2>Criar Cadastro</h2>
+  
+    <form (submit)="cadastrar(); $event.preventDefault()">
+      <label>Usuário:</label>
+      <input type="text" [(ngModel)]="username" name="username" required>
+  
+      <label>Senha:</label>
+      <input type="password" [(ngModel)]="password" name="password" required>
+  
+      <label>Confirmar senha:</label>
+      <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+  
+      <button type="submit">Cadastrar</button>
+    </form>
+  
+    <p *ngIf="erro" class="erro">{{ erro }}</p>
+    <p *ngIf="sucesso" class="sucesso">{{ sucesso }}</p>
+  
+    <p style="margin-top: 20px;">
+      <a routerLink="/login">Já tem conta? Entrar</a>
+    </p>
+  </div>
+  
