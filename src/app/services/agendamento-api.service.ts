@@ -14,7 +14,7 @@ export interface Agendamento {
   providedIn: 'root'
 })
 export class AgendamentoApiService {
-  private apiUrl = 'http://localhost:3000/agendamentos';
+  private apiUrl = 'https://univesp-salao.onrender.com/agendamentos';
 
   constructor(private http: HttpClient) {}
 

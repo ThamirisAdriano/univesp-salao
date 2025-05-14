@@ -11,6 +11,7 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { AdminPanelComponent } from './pages/admin-panel/admin-panel.component';
 import { LogoutButtonComponent } from './shared/logout-button/logout-button.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SaudacaoComponent } from './saudacao/saudacao.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     ServicosAgendadosComponent,
     CadastroComponent,
     AdminPanelComponent,
-    LogoutButtonComponent
+    LogoutButtonComponent,
+    SaudacaoComponent
   ],
   imports: [
     BrowserModule,
